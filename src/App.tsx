@@ -1,10 +1,10 @@
+import NavBar from '@/components/NavBar';
+
 const App = () => {
   return (
-    <div>
-      <p>x</p>
-      <p>d</p>
-      <p>z</p>
-    </div>
+    <>
+      <NavBar />
+    </>
   );
 };
 
