@@ -18,6 +18,9 @@ module.exports = {
           600: '#121221',
         },
       },
+      maxWidth: {
+        default: '1440px',
+      },
     },
   },
   plugins: [require('prettier-plugin-tailwindcss')],
