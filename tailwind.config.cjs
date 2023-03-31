@@ -8,13 +8,6 @@ module.exports = {
           sans: ['Poppins', 'sans-serif'],
         },
       },
-      grayscale: {
-        100: '#EEF1F4',
-        200: '#A0A3BD',
-        300: '#667080',
-        400: '#4E4B66',
-        500: '#050505',
-      },
       colors: {
         primary: '#1877F2',
         error: {
@@ -32,12 +25,19 @@ module.exports = {
           200: '#F4B740',
           300: '#946200',
         },
-      },
-      darkmode: {
-        100: '#E4E6EB',
-        200: '#B0B3B8',
-        300: '#3A3B3C',
-        400: '#1C1E21',
+        grayscale: {
+          100: '#EEF1F4',
+          200: '#A0A3BD',
+          300: '#667080',
+          400: '#4E4B66',
+          500: '#050505',
+        },
+        darkmode: {
+          100: '#E4E6EB',
+          200: '#B0B3B8',
+          300: '#3A3B3C',
+          400: '#1C1E21',
+        },
       },
       maxWidth: {
         default: '1440px',
