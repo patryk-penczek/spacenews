@@ -1,6 +1,6 @@
 import { HomeIcon, RocketIcon, SettingsIcon } from '@/assets/icons';
 
-const iconStyle: string = 'w-6 h-6';
+const iconStyle = 'w-6 h-6';
 
 interface MobileOption {
   icon: JSX.Element;
