@@ -1,5 +1,5 @@
 {
-  "include": ["src", "custom.d.ts"],
+  "include": ["src", "custom.d.ts", "api/api.ts"],
   "compilerOptions": {
     "baseUrl": "./src",
     "paths": {
