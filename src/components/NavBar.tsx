@@ -5,7 +5,7 @@ const NavBar = () => {
     <nav className="flex items-center justify-center bg-darkmode-400 p-4">
       <div className="flex w-full max-w-default justify-between font-medium text-grayscale-100">
         <p className="flex items-center gap-x-2">
-          <strong className="rounded-lg bg-grayscale-500 p-2 font-semibold">
+          <strong className="rounded-lg bg-primary p-2 font-semibold">
             Space
           </strong>
           News
