@@ -1,4 +1,4 @@
-import { HomeIcon, RocketIcon, SettingsIcon } from '@/assets/icons';
+import { AstronautIcon, HomeIcon, SettingsIcon } from '@/assets/icons';
 
 const iconStyle = 'w-6 h-6';
 
@@ -13,8 +13,8 @@ const mobileOptions: MobileOption[] = [
     name: 'Home',
   },
   {
-    icon: <RocketIcon className={iconStyle} />,
-    name: 'Launches',
+    icon: <AstronautIcon className={iconStyle} />,
+    name: 'Astronauts',
   },
   {
     icon: <SettingsIcon className={iconStyle} />,
