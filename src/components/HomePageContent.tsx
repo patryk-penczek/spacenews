@@ -22,17 +22,17 @@ const HomePageContent = () => {
                 href={result.url}
                 target="_blank"
                 rel="noreferrer"
-                className="col-span-5 flex h-full w-full items-center justify-center overflow-hidden rounded-md"
+                className="col-span-5 flex h-full w-full items-center justify-center overflow-hidden rounded-md after:absolute after:text-xl after:opacity-0 hover:after:opacity-100 hover:after:delay-150 hover:after:duration-300 hover:after:content-['Click_to_learn_more']"
               >
                 <img
                   src={result.image_url}
                   alt="Article image"
-                  className="h-full max-h-80 w-full object-cover"
+                  className="h-full max-h-80 w-full object-cover hover:blur-sm hover:brightness-50 hover:delay-150 hover:duration-300"
                 />
               </a>
               <div className="col-span-7 flex h-full flex-col justify-between gap-y-2 sm:gap-y-0">
                 <header className="flex flex-col gap-y-4">
-                  <h1 className="line-clamp-3 sm:text-lg md:text-xl lg:text-3xl lg:font-medium">
+                  <h1 className="line-clamp-3 sm:text-lg md:text-xl lg:text-2xl lg:font-medium">
                     {result.title}
                   </h1>
                   <p className="sr-only md:not-sr-only lg:text-lg">
