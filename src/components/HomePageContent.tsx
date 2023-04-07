@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import { getAllArticles } from '../../api/api';
 
 const HomePageContent = () => {
-  const [articles, setArticles] = useState<any>();
+  const [articles, setArticles] = useState<ArticlesData>();
   useEffect(() => {
     getAllArticles().then((data) => setArticles(data));
   }, []);
@@ -22,12 +22,12 @@ const HomePageContent = () => {
                 href={result.url}
                 target="_blank"
                 rel="noreferrer"
-                className="col-span-5 flex h-full w-full items-center justify-center overflow-hidden rounded-md after:absolute after:text-xl after:opacity-0 hover:after:opacity-100 hover:after:delay-150 hover:after:duration-300 hover:after:content-['Click_to_learn_more']"
+                className="group col-span-5 flex h-full w-full items-center justify-center overflow-hidden rounded-md after:absolute after:text-xs after:opacity-0 hover:after:opacity-100 hover:after:delay-150 hover:after:duration-500 hover:after:content-['Find_out_more'] sm:after:text-base sm:hover:after:content-['Click_to_find_out_more'] md:after:text-xl"
               >
                 <img
                   src={result.image_url}
                   alt="Article image"
-                  className="h-full max-h-80 w-full object-cover hover:blur-sm hover:brightness-50 hover:delay-150 hover:duration-300"
+                  className="aspect-[4/3] h-full max-h-80 w-full object-cover hover:delay-150 hover:duration-500 group-hover:blur-sm group-hover:brightness-50"
                 />
               </a>
               <div className="col-span-7 flex h-full flex-col justify-between gap-y-2 sm:gap-y-0">
