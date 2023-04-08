@@ -12,7 +12,7 @@ const NavBar = () => {
           </strong>
           News
         </p>
-        <ul className="fixed bottom-0 left-0 grid w-full grid-cols-3 grid-rows-1 items-center bg-darkmode-400 text-darkmode-200 md:static md:flex md:justify-end md:gap-x-4 md:text-white">
+        <ul className="fixed bottom-0 left-0 grid w-full grid-cols-3 grid-rows-1 items-center bg-darkmode-400 text-darkmode-200 md:static md:flex md:justify-end md:gap-x-4 md:text-lg md:text-white">
           {mobileOptions.map(({ icon, name, link }) => {
             const activeItem = location.pathname === link ? 'text-primary' : '';
             return (
