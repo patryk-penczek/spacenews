@@ -45,4 +45,5 @@ module.exports = {
     },
   },
   plugins: [require('prettier-plugin-tailwindcss')],
+  plugins: [require('@tailwindcss/line-clamp')],
 };
