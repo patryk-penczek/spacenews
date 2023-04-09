@@ -34,7 +34,7 @@ export const getSearchedArticles = async (title) => {
       };
     }
   }
-}
+};
 
 export const getAllReports = async () => {
   try {
