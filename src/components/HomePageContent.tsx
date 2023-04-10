@@ -18,7 +18,7 @@ const HomePageContent = () => {
           return (
             <article
               key={index}
-              className="grid w-full max-w-default grid-cols-12 grid-rows-1 items-center justify-center gap-x-2 p-4 font-light text-white sm:gap-x-4 md:gap-x-8"
+              className="grid w-full max-w-default grid-cols-12 items-center justify-center gap-x-2 p-4 font-light text-white sm:gap-x-4 md:gap-x-8"
             >
               <a
                 href={result.url}
