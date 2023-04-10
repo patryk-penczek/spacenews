@@ -13,8 +13,6 @@ const ReportsPageContent = () => {
       <div className="grid w-full max-w-default grid-cols-12 gap-y-4 p-4 md:gap-x-4 lg:gap-8">
         {reports !== undefined &&
           reports.results.map((result, index) => {
-            const datetime = result.published_at;
-            const dateWithoutTime = datetime.slice(0, datetime.indexOf('T'));
             return (
               <article
                 key={index}
@@ -38,7 +36,7 @@ const ReportsPageContent = () => {
                     <p className="w-full text-darkmode-200">
                       {result.news_site}
                       {' - '}
-                      {dateWithoutTime}
+                      {new Date(result.published_at).toLocaleDateString()}
                     </p>
                     <a
                       href={result.url}

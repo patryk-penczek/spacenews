@@ -13,8 +13,6 @@ const HomePageContent = () => {
       <SearchBar setArticles={setArticles} />
       {articles !== undefined &&
         articles.results.map((result, index) => {
-          const datetime = result.published_at;
-          const dateWithoutTime = datetime.slice(0, datetime.indexOf('T'));
           return (
             <article
               key={index}
@@ -44,7 +42,7 @@ const HomePageContent = () => {
                 <div className="flex flex-col text-xs text-darkmode-200 sm:text-sm md:text-base lg:text-lg">
                   <p>{result.news_site}</p>
                   <div className="flex justify-between">
-                    <p>{dateWithoutTime}</p>
+                    <p>{new Date(result.published_at).toLocaleDateString()}</p>
                     <a
                       href={result.url}
                       target="_blank"
