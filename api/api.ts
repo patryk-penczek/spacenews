@@ -38,7 +38,7 @@ export const getSearchedArticles = async (title) => {
 
 export const getAllReports = async () => {
   try {
-    const response = await fetch(`${API_URL}/reports/?limit=5`);
+    const response = await fetch(`${API_URL}/reports/?limit=6`);
     if (response.ok) return response.json();
     return {
       success: false,
