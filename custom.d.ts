@@ -37,3 +37,7 @@ interface ArticlesEvents {
   event_id: number;
   provider: string;
 }
+
+interface SetArticlesData {
+  setArticles: React.Dispatch<SetStateAction<ArticlesData>>;
+}
