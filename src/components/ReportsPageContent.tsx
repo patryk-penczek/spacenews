@@ -32,8 +32,8 @@ const ReportsPageContent = () => {
                   <p className="w-full text-justify text-sm line-clamp-4 md:text-base">
                     {result.summary}
                   </p>
-                  <div className="flex w-full items-center justify-between text-sm md:text-base">
-                    <p className="w-full text-darkmode-200">
+                  <div className="flex w-full items-center justify-between text-sm text-darkmode-200 md:text-base">
+                    <p>
                       {result.news_site}
                       {' - '}
                       {new Date(result.published_at).toLocaleDateString()}
