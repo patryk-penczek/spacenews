@@ -2,7 +2,7 @@ const API_URL = 'https://api.spaceflightnewsapi.net/v4';
 
 export const getAllArticles = async () => {
   try {
-    const response = await fetch(`${API_URL}/articles/?limit=5`);
+    const response = await fetch(`${API_URL}/articles/?limit=100`);
     if (response.ok) return response.json();
     return {
       success: false,
