@@ -15,18 +15,21 @@ const HomePageContent = () => {
   const [searchParams] = useSearchParams();
   const pageNumber = Number(searchParams.get('page')) || 1;
   const getArticlesPerPage = (data, pageNumber) => {
-    if (data !== undefined) {
+    if (data !== undefined && Array.isArray(data)) {
       const startIndex = (pageNumber - 1) * itemsPerPage;
       const endIndex = startIndex + itemsPerPage;
       return data.slice(startIndex, endIndex);
     }
   };
   const articlesMap = getArticlesPerPage(articleResults, pageNumber);
-  const totalPages = articleResults !== false ? Math.ceil(articleResults.length / itemsPerPage) : 0;
+  const totalPages =
+    articleResults !== false
+      ? Math.ceil(articleResults.length / itemsPerPage)
+      : 0;
   return (
     <section className="flex w-full flex-col items-center bg-darkmode-400">
       <SearchBar setArticles={setArticles} />
-      {articles !== undefined &&
+      {articlesMap !== undefined &&
         articlesMap.map((result, index) => {
           return (
             <article
