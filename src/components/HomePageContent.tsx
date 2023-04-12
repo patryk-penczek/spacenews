@@ -2,7 +2,7 @@ import { OpenIcon } from '@/assets/icons';
 import { useEffect, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { getAllArticles } from '../../api/api';
-import PagePagination from './PagePagination';
+import PagePagination from './Pagination';
 import SearchBar from './SearchBar';
 
 const HomePageContent = () => {
@@ -46,6 +46,7 @@ const HomePageContent = () => {
                   src={result.image_url}
                   alt="Article image"
                   className="aspect-[4/3] h-full max-h-80 w-full object-cover hover:delay-150 hover:duration-500 group-hover:blur-sm group-hover:brightness-50"
+                  loading="lazy"
                 />
               </a>
               <div className="col-span-7 flex h-full flex-col justify-between gap-y-2 sm:gap-y-0">
