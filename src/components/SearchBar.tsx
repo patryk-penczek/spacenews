@@ -31,7 +31,13 @@ const SearchBar = ({ setArticles }: SetArticlesData) => {
           className="w-full bg-transparent text-white outline-none"
           ref={searchRef}
         />
-        <button type="reset">
+        <button
+          type="reset"
+          onClick={() => {
+            searchRef.current!.value = '';
+            getAllArticles().then((data) => setArticles(data));
+          }}
+        >
           <CrossIcon className="h-6 w-6 text-darkmode-200" />
         </button>
       </form>
