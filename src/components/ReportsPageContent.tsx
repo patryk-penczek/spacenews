@@ -1,7 +1,6 @@
+import { NasaIcon, OpenIcon } from '@/assets/icons';
 import { useEffect, useState } from 'react';
 import { getAllReports } from '../../api/api';
-import { OpenIcon } from '@/assets/icons';
-import SearchBar from './SearchBar';
 
 const ReportsPageContent = () => {
   const [reports, setReports] = useState<any>();
@@ -20,11 +19,7 @@ const ReportsPageContent = () => {
               >
                 <div className="flex w-full flex-col items-center justify-center gap-y-2 md:gap-y-4">
                   <a href={result.url} target="_blank" rel="noreferrer">
-                    <img
-                      src={result.image_url}
-                      alt="Report image"
-                      className="h-12 w-12 rounded-full border-2 border-black object-fill hover:scale-105 hover:border-primary hover:duration-300 md:h-16 md:w-16"
-                    />
+                    <NasaIcon className="drop-shadow-md hover:scale-105 hover:duration-300" />
                   </a>
                   <h1 className="text-center font-medium sm:text-lg md:text-xl lg:text-2xl">
                     {result.title}

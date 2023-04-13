@@ -45,8 +45,7 @@ const HomePageContent = () => {
                 <img
                   src={result.image_url}
                   alt="Article image"
-                  className="aspect-[4/3] h-full max-h-80 w-full object-cover hover:delay-150 hover:duration-500 group-hover:blur-sm group-hover:brightness-50"
-                  loading="lazy"
+                  className="aspect-[4/3] h-full max-h-80 w-full object-cover drop-shadow-md hover:delay-150 hover:duration-500 group-hover:blur-sm group-hover:brightness-50"
                 />
               </a>
               <div className="col-span-7 flex h-full flex-col justify-between gap-y-2 sm:gap-y-0">
