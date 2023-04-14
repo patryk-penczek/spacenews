@@ -1,5 +1,6 @@
 import '@/styles/index.css';
 import ReportsPage from 'pages/ReportsPage';
+import SettingsPage from 'pages/SettingsPage';
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
@@ -13,6 +14,10 @@ const router = createBrowserRouter([
   {
     path: '/reports',
     element: <ReportsPage />,
+  },
+  {
+    path: '/settings',
+    element: <SettingsPage />,
   },
 ]);
 

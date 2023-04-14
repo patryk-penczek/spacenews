@@ -45,7 +45,7 @@ const PagePagination = ({ pageNumber, totalPages }: PropTypes): JSX.Element => {
 
       <Link
         to={`/?page=${pageNumber}`}
-        className={`{buttonStyle} text-primary`}
+        className={'{buttonStyle} text-primary'}
       >
         <p className={pageNumberWidth}>{pageNumber}</p>
       </Link>
