@@ -27,20 +27,20 @@ const HomePageContent = () => {
       ? Math.ceil(articleResults.length / itemsPerPage)
       : 0;
   return (
-    <section className="flex w-full flex-col items-center bg-darkmode-400">
+    <section className="flex w-full flex-col items-center bg-grayscale-100 dark:bg-darkmode-400">
       <SearchBar setArticles={setArticles} />
       {articlesMap !== undefined &&
         articlesMap.map((result, index) => {
           return (
             <article
               key={index}
-              className="grid w-full max-w-default grid-cols-12 items-center justify-center gap-x-2 p-4 font-light text-white sm:gap-x-4 md:gap-x-8"
+              className="grid w-full max-w-default grid-cols-12 items-center justify-center gap-x-2 p-4 font-light text-grayscale-500 dark:text-white sm:gap-x-4 md:gap-x-8"
             >
               <a
                 href={result.url}
                 target="_blank"
                 rel="noreferrer"
-                className="group col-span-5 flex h-full w-full items-center justify-center overflow-hidden rounded-md after:absolute after:text-xs after:opacity-0 hover:after:opacity-100 hover:after:delay-150 hover:after:duration-500 hover:after:content-['Find_out_more'] sm:after:text-base sm:hover:after:content-['Click_to_find_out_more'] md:after:text-xl"
+                className="group col-span-5 flex h-full w-full items-center justify-center overflow-hidden rounded-md text-white after:absolute after:text-xs after:opacity-0 hover:after:opacity-100 hover:after:delay-150 hover:after:duration-500 hover:after:content-['Find_out_more'] sm:after:text-base sm:hover:after:content-['Click_to_find_out_more'] md:after:text-xl"
               >
                 <img
                   src={result.image_url}
@@ -50,14 +50,14 @@ const HomePageContent = () => {
               </a>
               <div className="col-span-7 flex h-full flex-col justify-between gap-y-2 sm:gap-y-0">
                 <header className="flex flex-col gap-y-4">
-                  <h1 className="line-clamp-3 sm:text-lg md:text-xl lg:text-2xl lg:font-medium">
+                  <h1 className="font-medium line-clamp-3 sm:text-lg md:text-xl lg:text-2xl">
                     {result.title}
                   </h1>
                   <p className="sr-only md:not-sr-only lg:text-lg">
                     {result.summary}
                   </p>
                 </header>
-                <div className="flex flex-col text-xs text-darkmode-200 sm:text-sm md:text-base lg:text-lg">
+                <div className="flex flex-col text-xs text-grayscale-400 dark:text-darkmode-200 sm:text-sm md:text-base lg:text-lg">
                   <p>{result.news_site}</p>
                   <div className="flex justify-between">
                     <p>{new Date(result.published_at).toLocaleDateString()}</p>
