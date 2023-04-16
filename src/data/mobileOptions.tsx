@@ -21,8 +21,8 @@ const mobileOptions: MobileOption[] = [
   },
   {
     icon: <SettingsIcon className={iconStyle} />,
-    name: 'Settings',
-    link: '/settings',
+    name: 'Info',
+    link: '/info',
   },
 ];
 

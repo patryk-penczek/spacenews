@@ -43,6 +43,9 @@ module.exports = {
       maxWidth: {
         default: '1440px',
       },
+      borderWidth: {
+        1: '1px',
+      },
     },
   },
   plugins: [

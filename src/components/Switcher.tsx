@@ -12,13 +12,7 @@ const Switcher = () => {
     setDarkSide(checked);
   };
   return (
-    <DarkModeSwitch
-      checked={darkSide}
-      onChange={toggleDarkMode}
-      size={56}
-      moonColor="black"
-      sunColor="white"
-    />
+    <DarkModeSwitch checked={darkSide} onChange={toggleDarkMode} size={28} />
   );
 };
 
