@@ -2,15 +2,18 @@ import { OpenIcon } from '@/assets/icons';
 import { useEffect, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { getAllArticles } from '../../api/api';
+import ArticleSkeleton from './ArticleSkeleton';
 import PagePagination from './Pagination';
 import SearchBar from './SearchBar';
 
 const HomePageContent = () => {
   const [articles, setArticles] = useState<ArticlesData>();
   useEffect(() => {
-    getAllArticles().then((data) => setArticles(data));
+    getAllArticles().then((data) => {
+      setArticles(data);
+    });
   }, []);
-  const itemsPerPage = 5;
+  const itemsPerPage = 10;
   const articleResults = articles !== undefined && articles?.results;
   const [searchParams] = useSearchParams();
   const pageNumber = Number(searchParams.get('page')) || 1;
@@ -29,7 +32,7 @@ const HomePageContent = () => {
   return (
     <section className="flex w-full flex-col items-center bg-grayscale-100 dark:bg-darkmode-400">
       <SearchBar setArticles={setArticles} />
-      {articlesMap !== undefined &&
+      {Array.isArray(articlesMap) && articlesMap.length > 0 ? (
         articlesMap.map((result, index) => {
           return (
             <article
@@ -74,7 +77,14 @@ const HomePageContent = () => {
               </div>
             </article>
           );
-        })}
+        })
+      ) : (
+        <>
+          {Array.from({ length: itemsPerPage / 2 }).map((_, index) => {
+            return <ArticleSkeleton key={index} />;
+          })}
+        </>
+      )}
       <PagePagination pageNumber={pageNumber} totalPages={totalPages} />
     </section>
   );
