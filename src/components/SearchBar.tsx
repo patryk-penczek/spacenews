@@ -19,16 +19,16 @@ const SearchBar = ({ setArticles }: SetArticlesData) => {
   };
 
   return (
-    <div className="flex w-full max-w-default justify-center bg-darkmode-400 p-4">
+    <div className="flex w-full max-w-default justify-center bg-grayscale-100 p-4 dark:bg-darkmode-400">
       <Toaster />
-      <form className="flex w-full gap-x-4 rounded-md bg-darkmode-300 p-3 sm:p-4">
+      <form className="flex w-full gap-x-4 rounded-md border-1 border-darkmode-400 bg-grayscale-100 p-3 drop-shadow-md dark:bg-darkmode-300 sm:p-4">
         <button onClick={handleSubmit}>
-          <SearchIcon className="h-6 w-6 text-darkmode-200" />
+          <SearchIcon className="h-6 w-6 text-grayscale-400 dark:text-darkmode-200" />
         </button>
         <input
           type="text"
           placeholder="Search"
-          className="w-full bg-transparent text-white outline-none"
+          className="w-full bg-transparent text-black outline-none dark:text-white"
           ref={searchRef}
         />
         <button
@@ -38,7 +38,7 @@ const SearchBar = ({ setArticles }: SetArticlesData) => {
             getAllArticles().then((data) => setArticles(data));
           }}
         >
-          <CrossIcon className="h-6 w-6 text-darkmode-200" />
+          <CrossIcon className="h-6 w-6 text-grayscale-400 dark:text-darkmode-200" />
         </button>
       </form>
     </div>
