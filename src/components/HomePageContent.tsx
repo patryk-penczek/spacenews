@@ -53,7 +53,7 @@ const HomePageContent = () => {
               </a>
               <div className="col-span-7 flex h-full flex-col justify-between gap-y-2 sm:gap-y-0">
                 <header className="flex flex-col gap-y-4">
-                  <h1 className="font-medium line-clamp-3 sm:text-lg md:text-xl lg:text-2xl">
+                  <h1 className="line-clamp-3 font-medium sm:text-lg md:text-xl lg:text-2xl">
                     {result.title}
                   </h1>
                   <p className="sr-only md:not-sr-only lg:text-lg">

@@ -1,14 +1,17 @@
 import { CrossIcon, SearchIcon } from '@/assets/icons';
 import { useRef } from 'react';
 import toast, { Toaster } from 'react-hot-toast';
+import { useNavigate } from 'react-router-dom';
 import { getAllArticles, getSearchedArticles } from '../../api/api';
 
 const SearchBar = ({ setArticles }: SetArticlesData) => {
+  const navigate = useNavigate();
   const searchRef = useRef<HTMLInputElement | null>(null);
   const handleSubmit = (event: { preventDefault: () => void }) => {
-    event.preventDefault();
     const inputValue = String(searchRef.current?.value);
     const title = inputValue.split(' ').join('%20');
+    event.preventDefault();
+    navigate('/?page=1');
     getSearchedArticles(title).then((data) => {
       if (data.results < 1) {
         toast.error('Sorry, no results found');
