@@ -1,21 +1,23 @@
 import { NasaIcon, OpenIcon } from '@/assets/icons';
 import { useEffect, useState } from 'react';
 import { getAllReports } from '../../api/api';
+import ReportSkeleton from './ReportSkeleton';
 
 const ReportsPageContent = () => {
   const [reports, setReports] = useState<any>();
   useEffect(() => {
     getAllReports().then((data) => setReports(data));
   }, []);
+  const reportsMap = reports !== undefined && reports?.results;
   return (
-    <section className="flex w-full flex-col items-center bg-darkmode-400">
+    <section className="flex w-full flex-col items-center bg-grayscale-100 dark:bg-darkmode-400">
       <div className="grid w-full max-w-default grid-cols-12 gap-y-4 p-4 md:gap-x-4 lg:gap-8">
-        {reports !== undefined &&
-          reports.results.map((result, index) => {
+        {Array.isArray(reportsMap) && reportsMap.length > 0 ? (
+          reportsMap.map((result, index) => {
             return (
               <article
                 key={index}
-                className="col-span-12 w-full max-w-default items-center justify-center rounded-md bg-darkmode-300 p-4 font-light text-white md:col-span-6"
+                className="col-span-12 w-full max-w-default items-center justify-center rounded-md bg-grayscale-200 p-4 font-light text-black dark:bg-darkmode-300 dark:text-white md:col-span-6"
               >
                 <div className="flex w-full flex-col items-center justify-center gap-y-2 md:gap-y-4">
                   <a href={result.url} target="_blank" rel="noreferrer">
@@ -24,10 +26,10 @@ const ReportsPageContent = () => {
                   <h1 className="text-center font-medium sm:text-lg md:text-xl lg:text-2xl">
                     {result.title}
                   </h1>
-                  <p className="w-full text-justify text-sm line-clamp-4 md:text-base">
+                  <p className="line-clamp-6 w-full text-justify text-sm md:line-clamp-4 md:text-base">
                     {result.summary}
                   </p>
-                  <div className="flex w-full items-center justify-between text-sm text-darkmode-200 md:text-base">
+                  <div className="flex w-full items-center justify-between text-sm text-grayscale-400 dark:text-darkmode-200 md:text-base">
                     <p>
                       {result.news_site}
                       {' - '}
@@ -45,7 +47,14 @@ const ReportsPageContent = () => {
                 </div>
               </article>
             );
-          })}
+          })
+        ) : (
+          <>
+            {Array.from({ length: 6 }).map((_, index) => {
+              return <ReportSkeleton key={index} />;
+            })}
+          </>
+        )}
       </div>
     </section>
   );
