@@ -1,6 +1,6 @@
 const ArticleSkeleton = () => {
   return (
-    <article className="grid w-full max-w-default animate-pulse grid-cols-12 items-center justify-center gap-x-2 p-4 font-light text-grayscale-500 dark:text-white sm:gap-x-4 md:gap-x-8">
+    <article className="grid w-full max-w-default animate-pulse grid-cols-12 items-center justify-center gap-x-2 p-4 sm:gap-x-4 md:gap-x-8">
       <div className="col-span-5 h-full w-full">
         <div className="aspect-[4/3] h-full max-h-80 w-full rounded-md bg-grayscale-300 dark:bg-darkmode-200" />
       </div>
@@ -10,7 +10,7 @@ const ArticleSkeleton = () => {
           <div className="h-4 w-full rounded-md bg-grayscale-300 dark:bg-darkmode-200" />
           <div className="h-4 w-full rounded-md bg-grayscale-300 dark:bg-darkmode-200" />
         </header>
-        <div className="flex flex-col gap-y-1 text-xs text-grayscale-400 dark:text-darkmode-200 sm:text-sm md:text-base lg:text-lg">
+        <div className="flex flex-col gap-y-1">
           <div className="h-3 w-24 rounded-md bg-grayscale-300 dark:bg-darkmode-200 md:h-4" />
           <div className="flex items-center justify-between">
             <div className="h-3 w-16 rounded-md bg-grayscale-300 dark:bg-darkmode-200 md:h-4" />

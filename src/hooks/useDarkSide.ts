@@ -4,7 +4,7 @@ const useDarkSide = (): [
   string,
   React.Dispatch<React.SetStateAction<string>>,
 ] => {
-  const [theme, setTheme] = useState<string>(localStorage.theme);
+  const [theme, setTheme] = useState<string>(localStorage.theme || 'dark');
   const colorTheme = theme === 'dark' ? 'light' : 'dark';
 
   useEffect(() => {
