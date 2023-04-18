@@ -1,4 +1,4 @@
-import { HomeIcon, ReportIcon, SettingsIcon } from '@/assets/icons';
+import { HomeIcon, InfoIcon, ReportIcon } from '@/assets/icons';
 
 const iconStyle = 'w-6 h-6 md:sr-only';
 
@@ -20,7 +20,7 @@ const mobileOptions: MobileOption[] = [
     link: '/reports',
   },
   {
-    icon: <SettingsIcon className={iconStyle} />,
+    icon: <InfoIcon className={iconStyle} />,
     name: 'Info',
     link: '/info',
   },
