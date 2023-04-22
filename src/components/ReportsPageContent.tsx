@@ -11,7 +11,7 @@ const ReportsPageContent = () => {
   const reportsMap = reports !== undefined && reports?.results;
   return (
     <section className="flex w-full flex-col items-center bg-grayscale-100 dark:bg-darkmode-400">
-      <div className="grid w-full max-w-default grid-cols-12 gap-y-4 p-4 md:gap-x-4 lg:gap-8">
+      <div className="grid w-full max-w-default grid-cols-12 gap-y-4 p-4 pb-20 md:gap-x-4 md:pb-12 lg:gap-8">
         {Array.isArray(reportsMap) && reportsMap.length > 0 ? (
           reportsMap.map((result, index) => {
             return (
