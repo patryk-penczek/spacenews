@@ -1,16 +1,17 @@
 import { useEffect, useState } from 'react';
-import { getAllInfo } from '../../api/api';
+import { getAllInfo } from '../../../api/api';
 import InfoSkeleton from './InfoSkeleton';
 
-const InfoPageContent = () => {
+const InfoPageFooter = () => {
   const [info, setInfo] = useState<any>();
   useEffect(() => {
     getAllInfo().then((data) => setInfo(data));
   }, []);
   const infoMap = info?.news_sites;
   return (
-    <section className="flex min-h-[100vh] w-full flex-col items-center bg-grayscale-100 dark:bg-darkmode-400">
-      <div className="grid w-full max-w-default grid-cols-12 gap-y-4 p-4 md:gap-x-4 lg:gap-8">
+    <>
+      <h3 className="text-xl md:text-2xl">Sources of Space News</h3>
+      <div className="grid w-full grid-cols-12 gap-y-4 pb-20 md:gap-x-4 md:pb-12 lg:gap-8">
         {Array.isArray(infoMap) && infoMap.length > 0 ? (
           infoMap.map((result, index) => {
             return (
@@ -33,8 +34,8 @@ const InfoPageContent = () => {
           </>
         )}
       </div>
-    </section>
+    </>
   );
 };
 
-export default InfoPageContent;
+export default InfoPageFooter;
