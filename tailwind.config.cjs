@@ -42,6 +42,7 @@ module.exports = {
       },
       maxWidth: {
         default: '1440px',
+        article: '720px',
       },
       borderWidth: {
         1: '1px',
