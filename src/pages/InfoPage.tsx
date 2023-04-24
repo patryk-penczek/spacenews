@@ -1,4 +1,4 @@
-import InfoPageContent from '@/components/InfoPageContent';
+import InfoPageContent from '@/components/InfoPage/InfoPageContent';
 import DefaultLayout from 'layouts/DefaultLayout';
 
 const InfoPage = () => {
