@@ -2,7 +2,6 @@ export { ReactComponent as ArrowLeftIcon } from './arrowleft.svg';
 export { ReactComponent as ArrowRightIcon } from './arrowright.svg';
 export { ReactComponent as CrossIcon } from './cross.svg';
 export { ReactComponent as DarkModeIcon } from './darkmode.svg';
-export { ReactComponent as EmailIcon } from './email.svg';
 export { ReactComponent as GithubIcon } from './github.svg';
 export { ReactComponent as HomeIcon } from './home.svg';
 export { ReactComponent as InfoIcon } from './info.svg';
