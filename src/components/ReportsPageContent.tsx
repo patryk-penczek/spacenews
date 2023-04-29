@@ -4,7 +4,7 @@ import { getAllReports } from '../../api/api';
 import ReportSkeleton from './ReportSkeleton';
 
 const ReportsPageContent = () => {
-  const [reports, setReports] = useState<any>();
+  const [reports, setReports] = useState<ReportsData>();
   useEffect(() => {
     getAllReports().then((data) => setReports(data));
   }, []);
