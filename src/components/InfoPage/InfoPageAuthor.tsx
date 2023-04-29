@@ -17,7 +17,7 @@ const InfoPageAuthor = () => {
             <img
               src={AuthorPhoto}
               alt="Author photo"
-              className="h-36 w-36 rounded-full"
+              className="h-36 w-36 rounded-full drop-shadow-md"
             />
           </a>
           <p className="py-2 md:text-lg">Patryk Penczek</p>
