@@ -41,3 +41,26 @@ interface ArticlesEvents {
 interface SetArticlesData {
   setArticles: React.Dispatch<SetStateAction<ArticlesData>>;
 }
+
+interface ReportsData {
+  count: number;
+  next: string;
+  previous: string;
+  results: ReportsResults;
+}
+
+interface ReportsResults {
+  id: number;
+  title: string;
+  url: string;
+  image_url: string;
+  news_site: string;
+  summary: string;
+  published_at: string;
+  updated_at: string;
+}
+
+interface InfoData {
+  version: string;
+  news_sites: string[];
+}
