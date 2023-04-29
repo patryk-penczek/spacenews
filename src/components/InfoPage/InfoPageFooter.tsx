@@ -3,7 +3,7 @@ import { getAllInfo } from '../../../api/api';
 import InfoSkeleton from './InfoSkeleton';
 
 const InfoPageFooter = () => {
-  const [info, setInfo] = useState<any>();
+  const [info, setInfo] = useState<InfoData>();
   useEffect(() => {
     getAllInfo().then((data) => setInfo(data));
   }, []);
