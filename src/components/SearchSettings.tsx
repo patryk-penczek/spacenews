@@ -13,8 +13,8 @@ const SearchSettings = ({ isOpen }: { isOpen: boolean }) => {
         isOpen === true ? 'not-sr-only mt-4 duration-300' : 'sr-only'
       }`}
     >
-      <div className="rounded-md bg-grayscale-300 p-1 text-black dark:bg-darkmode-300 dark:text-white">
-        <select className="bg-transparent">
+      <div className="flex flex-col md:flex-row">
+        <select className="rounded-md bg-grayscale-300 px-2 py-1 text-black dark:bg-darkmode-300 dark:text-white">
           <option>Choose a news site</option>
           {Array.isArray(infoMap) && infoMap.length > 0 ? (
             infoMap.map((result, index) => {
