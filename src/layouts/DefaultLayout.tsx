@@ -1,17 +1,17 @@
 import NavBar from 'layouts/default/NavBar';
-import PropTypes from 'prop-types';
+import { ReactElement } from 'react';
 
-const DefaultLayout = ({ children }) => {
+type Props = {
+  children: ReactElement;
+};
+
+const DefaultLayout = ({ children }: Props): ReactElement => {
   return (
     <>
       <NavBar />
       {children}
     </>
   );
-};
-
-DefaultLayout.propTypes = {
-  children: PropTypes.node.isRequired,
 };
 
 export default DefaultLayout;
