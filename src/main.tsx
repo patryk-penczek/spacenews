@@ -1,5 +1,6 @@
 import '@/styles/index.css';
 import InfoPage from 'pages/InfoPage';
+import NotFound from 'pages/NotFound';
 import ReportsPage from 'pages/ReportsPage';
 import React from 'react';
 import ReactDOM from 'react-dom/client';
@@ -18,6 +19,10 @@ const router = createBrowserRouter([
   {
     path: '/info',
     element: <InfoPage />,
+  },
+  {
+    path: '*',
+    element: <NotFound />,
   },
 ]);
 
