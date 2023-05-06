@@ -40,6 +40,10 @@ module.exports = {
           400: '#1C1E21',
         },
       },
+      height: {
+        mobile: 'calc(100vh - 144px)',
+        large: 'calc(100vh - 72px)',
+      },
       maxWidth: {
         default: '1440px',
         article: '720px',
