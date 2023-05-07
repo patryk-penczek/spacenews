@@ -1,9 +1,9 @@
 import { NasaIcon, OpenIcon } from '@/assets/icons';
-import { useEffect, useState } from 'react';
+import { ReactElement, useEffect, useState } from 'react';
 import { getAllReports } from '../../api/api';
 import ReportSkeleton from './ReportSkeleton';
 
-const ReportsPageContent = () => {
+const ReportsPageContent = (): ReactElement => {
   const [reports, setReports] = useState<ReportsData>();
   useEffect(() => {
     getAllReports().then((data) => setReports(data));

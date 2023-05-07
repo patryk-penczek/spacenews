@@ -1,12 +1,12 @@
 import { OpenIcon } from '@/assets/icons';
-import { useEffect, useState } from 'react';
+import { ReactElement, useEffect, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { getAllArticles } from '../../api/api';
 import ArticleSkeleton from './ArticleSkeleton';
 import PagePagination from './Pagination';
 import SearchBar from './SearchBar';
 
-const HomePageContent = () => {
+const HomePageContent = (): ReactElement => {
   const [articles, setArticles] = useState<ArticlesData>();
   useEffect(() => {
     getAllArticles().then((data) => {

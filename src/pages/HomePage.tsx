@@ -1,7 +1,8 @@
 import HomePageContent from '@/components/HomePageContent';
 import DefaultLayout from 'layouts/DefaultLayout';
+import { ReactElement } from 'react';
 
-const HomePage = () => {
+const HomePage = (): ReactElement => {
   return (
     <DefaultLayout>
       <HomePageContent />

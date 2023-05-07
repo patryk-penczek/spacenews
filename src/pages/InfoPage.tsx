@@ -1,7 +1,8 @@
 import InfoPageContent from '@/components/InfoPage/InfoPageContent';
 import DefaultLayout from 'layouts/DefaultLayout';
+import { ReactElement } from 'react';
 
-const InfoPage = () => {
+const InfoPage = (): ReactElement => {
   return (
     <DefaultLayout>
       <InfoPageContent />

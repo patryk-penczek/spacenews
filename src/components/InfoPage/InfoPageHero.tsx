@@ -1,4 +1,6 @@
-const InfoPageHero = () => {
+import { ReactElement } from "react";
+
+const InfoPageHero = (): ReactElement => {
   return (
     <div className="flex w-full flex-col gap-y-2 text-justify text-sm md:text-base">
       <h1 className="text-xl md:text-2xl">About Space News</h1>

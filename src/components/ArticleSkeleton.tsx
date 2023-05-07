@@ -1,4 +1,6 @@
-const ArticleSkeleton = () => {
+import { ReactElement } from "react";
+
+const ArticleSkeleton = (): ReactElement => {
   return (
     <article className="grid w-full max-w-default animate-pulse grid-cols-12 items-center justify-center gap-x-2 p-4 sm:gap-x-4 md:gap-x-8">
       <div className="col-span-5 h-full w-full">

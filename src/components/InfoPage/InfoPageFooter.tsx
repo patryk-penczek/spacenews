@@ -1,8 +1,8 @@
-import { useEffect, useState } from 'react';
+import { ReactElement, useEffect, useState } from 'react';
 import { getAllInfo } from '../../../api/api';
 import InfoSkeleton from './InfoSkeleton';
 
-const InfoPageFooter = () => {
+const InfoPageFooter = (): ReactElement => {
   const [info, setInfo] = useState<InfoData>();
   useEffect(() => {
     getAllInfo().then((data) => setInfo(data));

@@ -1,4 +1,6 @@
-const ReportSkeleton = () => {
+import { ReactElement } from 'react';
+
+const ReportSkeleton = (): ReactElement => {
   return (
     <article className="col-span-12 w-full max-w-default items-center justify-center rounded-md bg-grayscale-200 p-4 dark:bg-darkmode-300 md:col-span-6">
       <div className="flex w-full flex-col items-center justify-center gap-y-2 md:gap-y-6">

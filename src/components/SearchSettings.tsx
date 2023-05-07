@@ -1,7 +1,11 @@
-import { useEffect, useState } from 'react';
+import { ReactElement, useEffect, useState } from 'react';
 import { getAllInfo } from '../../api/api';
 
-const SearchSettings = ({ isOpen }: { isOpen: boolean }) => {
+type Props = {
+  isOpen: boolean;
+};
+
+const SearchSettings = ({ isOpen }: Props): ReactElement => {
   const [info, setInfo] = useState<InfoData>();
   useEffect(() => {
     getAllInfo().then((data) => setInfo(data));
@@ -14,7 +18,7 @@ const SearchSettings = ({ isOpen }: { isOpen: boolean }) => {
       }`}
     >
       <div className="flex flex-col md:flex-row">
-        <select className="rounded-md bg-grayscale-300 px-2 py-1 text-black dark:bg-darkmode-300 dark:text-white">
+        <select className="rounded-md bg-grayscale-300 px-2 py-1 text-black hover:cursor-pointer dark:bg-darkmode-300 dark:text-white">
           <option>Choose a news site</option>
           {Array.isArray(infoMap) && infoMap.length > 0 ? (
             infoMap.map((result, index) => {

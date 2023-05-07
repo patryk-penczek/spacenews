@@ -1,7 +1,8 @@
 import AuthorPhoto from '@/assets/author-photo.webp';
 import { GithubIcon, LinkedInIcon, TwitterIcon } from '@/assets/icons';
+import { ReactElement } from 'react';
 
-const InfoPageAuthor = () => {
+const InfoPageAuthor = (): ReactElement => {
   const iconStyle = 'w-8 h-8';
   return (
     <div className="flex w-full flex-col gap-y-4 bg-grayscale-100 dark:bg-darkmode-400">

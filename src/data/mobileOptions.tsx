@@ -1,11 +1,12 @@
 import { HomeIcon, InfoIcon, ReportIcon } from '@/assets/icons';
+import { ReactElement } from 'react';
 
 const iconStyle = 'w-6 h-6 md:sr-only';
 
 interface MobileOption {
-  icon: JSX.Element;
-  name: string;
-  link: string;
+  readonly icon: ReactElement;
+  readonly name: string;
+  readonly link: string;
 }
 
 const mobileOptions: MobileOption[] = [

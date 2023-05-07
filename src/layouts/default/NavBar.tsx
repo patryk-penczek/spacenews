@@ -1,8 +1,9 @@
 import Switcher from '@/components/Switcher';
 import mobileOptions from '@/data/mobileOptions';
+import { ReactElement } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 
-const NavBar = () => {
+const NavBar = (): ReactElement => {
   const location = useLocation();
   return (
     <nav className="flex items-center justify-center bg-grayscale-100 dark:bg-darkmode-400">

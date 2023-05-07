@@ -1,11 +1,11 @@
 import { CrossIcon, SearchIcon, SettingsIcon } from '@/assets/icons';
-import { useRef, useState } from 'react';
+import { ReactElement, useRef, useState } from 'react';
 import toast, { Toaster } from 'react-hot-toast';
 import { useNavigate } from 'react-router-dom';
 import { getAllArticles, getSearchedArticles } from '../../api/api';
 import SearchSettings from './SearchSettings';
 
-const SearchBar = ({ setArticles }: SetArticlesData) => {
+const SearchBar = ({ setArticles }: SetArticlesData): ReactElement => {
   const [isOpen, setIsOpen] = useState(false);
   const navigate = useNavigate();
   const searchRef = useRef<HTMLInputElement | null>(null);
