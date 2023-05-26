@@ -13,7 +13,7 @@ Space News is a web application that provides the latest news and daily reports 
 
 You can either run the project locally on your machine or simply visit the live version of the app:
 
-https://patryk-spacenews.netlify.app.
+https://spacenews.patrykpenczek.pl
 
 ### Local Installation (Optional)
 
