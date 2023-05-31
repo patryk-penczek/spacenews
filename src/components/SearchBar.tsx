@@ -27,7 +27,7 @@ const SearchBar = ({ setArticles }: SetArticlesData): ReactElement => {
     <div className="flex w-full max-w-default flex-col justify-center bg-grayscale-100 p-4 dark:bg-darkmode-400">
       <Toaster />
       <form className="flex w-full gap-x-4 rounded-md border-1 border-darkmode-400 bg-grayscale-100 p-3 drop-shadow-md dark:bg-darkmode-300 sm:p-4">
-        <button onClick={handleSubmit}>
+        <button aria-label="Search" onClick={handleSubmit}>
           <SearchIcon className="h-6 w-6 text-grayscale-400 dark:text-darkmode-200" />
         </button>
         <input
@@ -37,11 +37,16 @@ const SearchBar = ({ setArticles }: SetArticlesData): ReactElement => {
           ref={searchRef}
         />
         <div className="flex gap-x-2 text-grayscale-400 dark:text-darkmode-200 md:gap-x-4">
-          <button type="button" onClick={() => setIsOpen(!isOpen)}>
+          <button
+            type="button"
+            aria-label="Settings"
+            onClick={() => setIsOpen(!isOpen)}
+          >
             <SettingsIcon className="h-6 w-6 stroke-grayscale-400 dark:stroke-darkmode-200" />
           </button>
           <button
             type="reset"
+            aria-label="Reset"
             onClick={() => {
               searchRef.current!.value = '';
               navigate('/');
