@@ -67,6 +67,7 @@ const HomePageContent = (): ReactElement => {
                     <p>{new Date(result.published_at).toLocaleDateString()}</p>
                     <a
                       href={result.url}
+                      aria-label={`Open article: ${result.title}`}
                       target="_blank"
                       rel="noreferrer"
                       className="duration-300 hover:text-primary"
