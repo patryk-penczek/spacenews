@@ -48,20 +48,20 @@ const HomePageContent = (): ReactElement => {
                 <img
                   src={result.image_url}
                   alt="Article image"
-                  className="aspect-[4/3] h-full max-h-80 w-full object-cover drop-shadow-md hover:delay-150 hover:duration-500 group-hover:blur-sm group-hover:brightness-50"
+                  className="aspect-[4/3] h-full max-h-28 w-full object-cover drop-shadow-md hover:delay-150 hover:duration-500 group-hover:blur-sm group-hover:brightness-50 sm:max-h-40 md:max-h-56 xl:max-h-80"
                   sizes="(min-width: 280px) 35vw, (min-width: 450px) 38vw, (min-width: 1024px) 39vw, (min-width: 1536px) 37vw, (min-width: 1920px) 30vw"
                 />
               </a>
               <div className="col-span-7 flex h-full flex-col justify-between gap-y-2 sm:gap-y-0">
                 <header className="flex flex-col gap-y-4">
-                  <h1 className="line-clamp-3 font-medium sm:text-lg md:text-xl lg:text-2xl">
+                  <h1 className="text-sm font-medium sm:text-base md:text-lg lg:text-xl xl:text-2xl">
                     {result.title}
                   </h1>
-                  <p className="sr-only md:not-sr-only lg:text-lg">
+                  <p className="sr-only text-sm md:not-sr-only md:line-clamp-3 lg:text-base xl:line-clamp-6 xl:text-lg">
                     {result.summary}
                   </p>
                 </header>
-                <div className="flex flex-col text-xs text-grayscale-400 dark:text-darkmode-200 sm:text-sm md:text-base lg:text-lg">
+                <div className="flex flex-col text-xs text-grayscale-400 dark:text-darkmode-200 md:text-sm lg:text-base xl:text-lg">
                   <p>{result.news_site}</p>
                   <div className="flex justify-between">
                     <p>{new Date(result.published_at).toLocaleDateString()}</p>
