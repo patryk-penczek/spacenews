@@ -48,7 +48,7 @@ const HomePageContent = (): ReactElement => {
                 <img
                   src={result.image_url}
                   alt="Article image"
-                  className="aspect-[4/3] h-full max-h-28 w-full object-cover drop-shadow-md hover:delay-150 hover:duration-500 group-hover:blur-sm group-hover:brightness-50 sm:max-h-40 md:max-h-56 xl:max-h-80"
+                  className="aspect-[4/3] h-28 w-full object-cover drop-shadow-md hover:delay-150 hover:duration-500 group-hover:blur-sm group-hover:brightness-50 sm:h-40 md:h-56 xl:h-80"
                   sizes="(min-width: 280px) 35vw, (min-width: 450px) 38vw, (min-width: 1024px) 39vw, (min-width: 1536px) 37vw, (min-width: 1920px) 30vw"
                 />
               </a>
