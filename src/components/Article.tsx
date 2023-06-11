@@ -1,6 +1,20 @@
 import { OpenIcon } from '@/assets/icons';
+import { ReactElement } from 'react';
 
-const Article = ({ result }) => {
+type Props = {
+  readonly result: Result;
+};
+
+type Result = {
+  readonly url: string;
+  readonly image_url: string;
+  readonly title: string;
+  readonly summary: string;
+  readonly news_site: string;
+  readonly published_at: string;
+};
+
+const Article = ({ result }: Props): ReactElement => {
   return (
     <article className="grid h-32 w-full max-w-default grid-cols-12 items-center justify-center gap-x-2 p-4 font-light text-grayscale-500 dark:text-white sm:h-40 sm:gap-x-4 md:h-56 md:gap-x-8 lg:h-72 xl:h-96">
       <a
