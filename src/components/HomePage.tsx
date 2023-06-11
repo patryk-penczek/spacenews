@@ -41,9 +41,7 @@ const HomePageContent = (): ReactElement => {
         })
       ) : (
         <>
-          {Array.from({ length: itemsPerPage / 2 }).map((_, index) => {
-            return <ArticleSkeleton key={index} />;
-          })}
+          {[...Array(itemsPerPage / 2).keys()].map(index => <ArticleSkeleton key={index} />)}
         </>
       )}
       <PagePagination pageNumber={pageNumber} totalPages={totalPages} />
