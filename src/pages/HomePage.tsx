@@ -1,4 +1,4 @@
-import HomePageContent from '@/components/HomePageContent';
+import HomePageContent from '@/components/HomePage';
 import DefaultLayout from 'layouts/DefaultLayout';
 import { ReactElement } from 'react';
 
