@@ -1,11 +1,10 @@
-import { OpenIcon } from '@/assets/icons';
 import { ReactElement, useEffect, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { getAllArticles } from '../../api/api';
+import Article from './Article';
 import ArticleSkeleton from './ArticleSkeletonLoading';
 import PagePagination from './Pagination';
 import SearchBar from './SearchBar';
-import Article from './Article';
 
 const HomePageContent = (): ReactElement => {
   const [articles, setArticles] = useState<ArticlesData>();
@@ -31,17 +30,17 @@ const HomePageContent = (): ReactElement => {
       ? Math.ceil(articleResults.length / itemsPerPage)
       : 0;
   return (
-    <section className="flex w-full flex-col items-center bg-grayscale-100 dark:bg-darkmode-400">
+    <section className="flex min-h-large w-full flex-col items-center bg-grayscale-100 dark:bg-darkmode-400">
       <SearchBar setArticles={setArticles} />
       {Array.isArray(articlesMap) && articlesMap.length > 0 ? (
         articlesMap.map((result, index) => {
-          return (
-            <Article key={index} result={result} />
-          );
+          return <Article key={index} result={result} />;
         })
       ) : (
         <>
-          {[...Array(itemsPerPage / 2).keys()].map(index => <ArticleSkeleton key={index} />)}
+          {[...Array(itemsPerPage / 2).keys()].map((index) => (
+            <ArticleSkeleton key={index} />
+          ))}
         </>
       )}
       <PagePagination pageNumber={pageNumber} totalPages={totalPages} />
