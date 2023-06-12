@@ -4,10 +4,12 @@ import InfoSkeleton from './InfoSkeleton';
 
 const InfoPageFooter = (): ReactElement => {
   const [info, setInfo] = useState<InfoData>();
+  const infoMap = info?.news_sites;
+  const loadingLength = infoMap !== undefined ? infoMap.length : 35;
   useEffect(() => {
     getAllInfo().then((data) => setInfo(data));
   }, []);
-  const infoMap = info?.news_sites;
+  
   return (
     <>
       <h3 className="text-xl md:text-2xl">Sources of Space News</h3>
@@ -28,7 +30,7 @@ const InfoPageFooter = (): ReactElement => {
           })
         ) : (
           <>
-            {Array.from({ length: 35 }).map((_, index) => {
+            {Array.from({ length: loadingLength }).map((_, index) => {
               return <InfoSkeleton key={index} />;
             })}
           </>
