@@ -15,22 +15,16 @@ type Props = {
 
 const SearchSettings = ({ isOpen, setArticles }: Props): ReactElement => {
   const [info, setInfo] = useState<InfoData>();
-  const [loadingLength, setLoadingLength] = useState(0);
   const infoMap = info?.news_sites;
   const selectRef = useRef<HTMLSelectElement>(null);
-  useEffect(() => {
-    getAllInfo().then((data: InfoData) => setInfo(data));
-  }, []);
-  useEffect(() => {
-    if (infoMap) {
-      setLoadingLength(infoMap.length);
-    }
-  }, [infoMap]);
-
+  const loadingLength = infoMap !== undefined ? infoMap.length : 35;
   const searchByNewsSite = () => {
     const news_site = selectRef.current && selectRef.current.value;
     getSearchedNewsSites(news_site).then((data) => setArticles(data));
   };
+  useEffect(() => {
+    getAllInfo().then((data: InfoData) => setInfo(data));
+  }, []);
 
   return (
     <div
