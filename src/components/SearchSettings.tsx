@@ -1,16 +1,31 @@
-import { ReactElement, useEffect, useState } from 'react';
-import { getAllInfo } from '../../api/api';
+import {
+  Dispatch,
+  ReactElement,
+  SetStateAction,
+  useEffect,
+  useRef,
+  useState,
+} from 'react';
+import { getAllInfo, getSearchedNewsSites } from '../../api/api';
 
 type Props = {
   isOpen: boolean;
+  setArticles: Dispatch<SetStateAction<ArticlesData>>;
 };
 
-const SearchSettings = ({ isOpen }: Props): ReactElement => {
+const SearchSettings = ({ isOpen, setArticles }: Props): ReactElement => {
   const [info, setInfo] = useState<InfoData>();
+  const [loadingLength, setLoadingLength] = useState(0);
+  const selectRef = useRef<HTMLSelectElement>(null);
   useEffect(() => {
-    getAllInfo().then((data) => setInfo(data));
+    getAllInfo().then((data: InfoData) => setInfo(data));
   }, []);
   const infoMap = info?.news_sites;
+  const searchByNewsSite = () => {
+    const news_site = selectRef.current && selectRef.current.value;
+    getSearchedNewsSites(news_site).then((data) => setArticles(data));
+  };
+
   return (
     <div
       className={`${
@@ -18,13 +33,19 @@ const SearchSettings = ({ isOpen }: Props): ReactElement => {
       }`}
     >
       <div className="flex flex-col md:flex-row">
-        <select className="rounded-md bg-grayscale-300 px-2 py-1 text-black hover:cursor-pointer dark:bg-darkmode-300 dark:text-white">
-          <option>Choose a news site</option>
+        <select
+          ref={selectRef}
+          onChange={searchByNewsSite}
+          required
+          className="rounded-md bg-grayscale-300 px-2 py-1 text-black hover:cursor-pointer dark:bg-darkmode-300 dark:text-white"
+        >
+          <option label="Choose a news site" />
           {Array.isArray(infoMap) && infoMap.length > 0 ? (
             infoMap.map((result, index) => {
               return (
                 <option
                   key={index}
+                  value={result}
                   className="col-span-4 text-xs text-black hover:text-primary hover:duration-300 dark:text-white dark:hover:text-primary md:col-span-2 md:text-sm"
                 >
                   {result}

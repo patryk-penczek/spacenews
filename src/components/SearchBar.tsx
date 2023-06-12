@@ -57,7 +57,7 @@ const SearchBar = ({ setArticles }: SetArticlesData): ReactElement => {
           </button>
         </div>
       </form>
-      <SearchSettings isOpen={isOpen} />
+      <SearchSettings isOpen={isOpen} setArticles={setArticles} />
     </div>
   );
 };
