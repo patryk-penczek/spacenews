@@ -41,7 +41,7 @@ export const getSearchedArticles = async (title) => {
 export const getSearchedNewsSites = async (news_site) => {
   try {
     const response = await fetch(
-      `${API_URL}/articles/?news_site=${news_site}`,
+      `${API_URL}/articles/?limit=100&news_site=${news_site}`,
     );
     if (response.ok) return response.json();
     return {
