@@ -6,6 +6,7 @@ import {
   useRef,
   useState,
 } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { getAllInfo, getSearchedNewsSites } from '../../api/api';
 
 type Props = {
@@ -15,10 +16,12 @@ type Props = {
 
 const SearchSettings = ({ isOpen, setArticles }: Props): ReactElement => {
   const [info, setInfo] = useState<InfoData>();
+  const navigate = useNavigate();
   const infoMap = info?.news_sites;
   const selectRef = useRef<HTMLSelectElement>(null);
   const loadingLength = infoMap !== undefined ? infoMap.length : 35;
   const searchByNewsSite = () => {
+    navigate('/');
     const news_site = selectRef.current && selectRef.current.value;
     getSearchedNewsSites(news_site).then((data) => setArticles(data));
   };
