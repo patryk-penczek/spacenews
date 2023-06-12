@@ -38,6 +38,26 @@ export const getSearchedArticles = async (title) => {
   }
 };
 
+export const getSearchedNewsSites = async (news_site) => {
+  try {
+    const response = await fetch(
+      `${API_URL}/articles/?news_site=${news_site}`,
+    );
+    if (response.ok) return response.json();
+    return {
+      success: false,
+      error: `Request failed with status code ${response.status}`,
+    };
+  } catch (error) {
+    if (error instanceof Error) {
+      return {
+        success: false,
+        error: error.message,
+      };
+    }
+  }
+};
+
 export const getAllReports = async () => {
   try {
     const response = await fetch(`${API_URL}/reports/?limit=6`);
