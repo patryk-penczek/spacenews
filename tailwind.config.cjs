@@ -44,6 +44,9 @@ module.exports = {
         mobile: 'calc(100vh - 144px)',
         large: 'calc(100vh - 72px)',
       },
+      minHeight: {
+        large: 'calc(100vh - 72px)',
+      },
       maxWidth: {
         default: '1440px',
         article: '720px',
