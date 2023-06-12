@@ -13,12 +13,12 @@ const InfoPageAuthor = (): ReactElement => {
             href="https://patrykpenczek.pl"
             target="_blank"
             rel="noreferrer"
-            className="hover:scale-105 hover:duration-300"
+            className="h-36 w-36 hover:scale-105 hover:duration-300"
           >
             <img
               src={AuthorPhoto}
               alt="Author photo"
-              className="h-36 w-36 rounded-full drop-shadow-md"
+              className="rounded-full drop-shadow-md"
             />
           </a>
           <p className="py-2 md:text-lg">Patryk Penczek</p>
