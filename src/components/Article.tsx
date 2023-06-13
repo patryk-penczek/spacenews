@@ -1,5 +1,5 @@
 import { OpenIcon } from '@/assets/icons';
-import { ReactElement } from 'react';
+import { ReactElement, useRef } from 'react';
 
 type Props = {
   readonly result: Result;
@@ -15,6 +15,10 @@ type Result = {
 };
 
 const Article = ({ result }: Props): ReactElement => {
+  const imageRef = useRef<HTMLImageElement>(null);
+  const handleImageError = () => {
+    imageRef.current?.setAttribute('src', '/og-image-1200x630.webp');
+  };
   return (
     <article className="grid h-32 w-full max-w-default grid-cols-12 items-center justify-center gap-x-2 p-4 font-light text-grayscale-500 dark:text-white sm:h-40 sm:gap-x-4 md:h-56 md:gap-x-8 lg:h-72 xl:h-96">
       <a
@@ -24,11 +28,13 @@ const Article = ({ result }: Props): ReactElement => {
         className="group col-span-5 flex h-full w-full items-center justify-center overflow-hidden rounded-md text-white after:absolute after:text-xs after:opacity-0 hover:after:opacity-100 hover:after:delay-150 hover:after:duration-500 hover:after:content-['Find_out_more'] sm:after:text-base sm:hover:after:content-['Click_to_find_out_more'] md:after:text-xl"
       >
         <img
+          ref={imageRef}
           src={result.image_url}
           alt="Article image"
-          loading='lazy'
+          loading="lazy"
           className="aspect-[4/3] w-full object-cover drop-shadow-md hover:delay-150 hover:duration-500 group-hover:blur-sm group-hover:brightness-50"
           sizes="(min-width: 280px) 35vw, (min-width: 450px) 38vw, (min-width: 1024px) 39vw, (min-width: 1536px) 37vw, (min-width: 1920px) 30vw"
+          onError={handleImageError}
         />
       </a>
       <div className="col-span-7 flex h-full flex-col justify-between gap-y-2 sm:gap-y-0">
