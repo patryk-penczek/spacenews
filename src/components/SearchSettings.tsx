@@ -40,7 +40,7 @@ const SearchSettings = ({ isOpen, setArticles }: Props): ReactElement => {
           ref={selectRef}
           onChange={searchByNewsSite}
           required
-          className="rounded-md bg-grayscale-300 px-2 py-1 text-black hover:cursor-pointer dark:bg-darkmode-300 dark:text-white"
+          className="rounded-md border-1 border-darkmode-400 bg-grayscale-100 px-2 py-1 text-black hover:cursor-pointer dark:bg-darkmode-300 dark:text-white"
         >
           <option label="Choose a news site" />
           {Array.isArray(infoMap) && infoMap.length > 0 ? (
