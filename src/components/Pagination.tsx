@@ -13,7 +13,7 @@ const PagePagination = ({
 }: PropTypes): ReactElement => {
   const arrowStyle = 'md:h-7 md:w-7 w-6 h-6';
   const buttonStyle =
-    'flex disabled:sr-only items-center hover:text-primary hover:duration-300';
+    'flex disabled:sr-only p-1 md:p-2 rounded-md font-semibold dark:bg-darkmode-300 dark:text-darkmode-200 dark:hover:text-primary text-grayscale-200 bg-white items-center hover:text-primary hover:duration-300';
   const pageNumberWidth = 'w-8 text-center';
 
   const generateLinkButton = (page: number, content: ReactElement) => {
@@ -33,7 +33,7 @@ const PagePagination = ({
   };
 
   return (
-    <div className="flex w-full justify-center gap-x-2 pb-20 pt-2 text-black dark:text-white sm:gap-x-8 sm:text-lg md:gap-x-4 md:pb-12 md:pt-8 md:text-xl">
+    <div className="flex w-full justify-center gap-x-2 pb-20 pt-2 text-black dark:text-white sm:gap-x-3 sm:text-lg md:gap-x-4 md:pb-12 md:pt-8 md:text-xl">
       {generateLinkButton(
         1,
         <>
@@ -52,11 +52,8 @@ const PagePagination = ({
         <p className={pageNumberWidth}>{pageNumber - 1}</p>,
       )}
 
-      <Link
-        to={`/?page=${pageNumber}`}
-        className={'{buttonStyle} text-primary'}
-      >
-        <p className={pageNumberWidth}>{pageNumber}</p>
+      <Link to={`/?page=${pageNumber}`} className={buttonStyle}>
+        <p className={`${pageNumberWidth} text-primary`}>{pageNumber}</p>
       </Link>
 
       {generateLinkButton(
