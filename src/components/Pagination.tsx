@@ -1,4 +1,4 @@
-import { ArrowLeftIcon, ArrowRightIcon } from '@/assets/icons';
+import { DoubleArrowLeftIcon, DoubleArrowRightIcon } from '@/assets/icons';
 import { ReactElement } from 'react';
 import { Link } from 'react-router-dom';
 
@@ -33,14 +33,19 @@ const PagePagination = ({
   };
 
   return (
-    <div className="flex w-full justify-center gap-x-4 pb-20 pt-2 text-black dark:text-white sm:gap-x-8 sm:text-lg md:gap-x-12 md:pb-12 md:pt-8 md:text-xl">
+    <div className="flex w-full justify-center gap-x-2 pb-20 pt-2 text-black dark:text-white sm:gap-x-8 sm:text-lg md:gap-x-4 md:pb-12 md:pt-8 md:text-xl">
       {generateLinkButton(
-        pageNumber - 1,
+        1,
         <>
-          <ArrowLeftIcon className={arrowStyle} />
-          <p>Prev</p>
+          <DoubleArrowLeftIcon className={arrowStyle} />
         </>,
       )}
+
+      {pageNumber === totalPages &&
+        generateLinkButton(
+          pageNumber - 2,
+          <p className={pageNumberWidth}>{pageNumber - 2}</p>,
+        )}
 
       {generateLinkButton(
         pageNumber - 1,
@@ -59,11 +64,16 @@ const PagePagination = ({
         <p className={pageNumberWidth}>{pageNumber + 1}</p>,
       )}
 
+      {pageNumber === 1 &&
+        generateLinkButton(
+          pageNumber + 2,
+          <p className={pageNumberWidth}>{pageNumber + 2}</p>,
+        )}
+
       {generateLinkButton(
-        pageNumber + 1,
+        totalPages,
         <>
-          <p>Next</p>
-          <ArrowRightIcon className={arrowStyle} />
+          <DoubleArrowRightIcon className={arrowStyle} />
         </>,
       )}
     </div>
