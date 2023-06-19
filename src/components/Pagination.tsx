@@ -37,7 +37,7 @@ const PagePagination = ({
       {generateLinkButton(
         1,
         <>
-          <DoubleArrowLeftIcon className={arrowStyle} />
+          <DoubleArrowLeftIcon aria-label="First page" className={arrowStyle} />
         </>,
       )}
 
@@ -70,7 +70,7 @@ const PagePagination = ({
       {generateLinkButton(
         totalPages,
         <>
-          <DoubleArrowRightIcon className={arrowStyle} />
+          <DoubleArrowRightIcon aria-label="Last page" className={arrowStyle} />
         </>,
       )}
     </div>
