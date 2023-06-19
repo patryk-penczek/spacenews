@@ -1,5 +1,3 @@
-export { ReactComponent as ArrowLeftIcon } from './arrowleft.svg';
-export { ReactComponent as ArrowRightIcon } from './arrowright.svg';
 export { ReactComponent as DoubleArrowLeftIcon } from './doublearrowleft.svg';
 export { ReactComponent as DoubleArrowRightIcon } from './doublearrowright.svg';
 export { ReactComponent as CrossIcon } from './cross.svg';
