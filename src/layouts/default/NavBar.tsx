@@ -20,7 +20,7 @@ const NavBar = (): ReactElement => {
             return (
               <li
                 key={name}
-                className={`hover:text-primary hover:duration-300 ${activeItem}`}
+                className={`hover:duration-300 md:hover:text-primary ${activeItem}`}
               >
                 <Link
                   to={link}
