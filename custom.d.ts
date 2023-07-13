@@ -7,14 +7,14 @@ declare module '*.svg' {
   export default src;
 }
 
-interface ArticlesData {
+type ArticlesData = {
   count: number;
   next: string;
   previous: string;
   results: ArticlesResults[];
-}
+};
 
-interface ArticlesResults {
+type ArticlesResults = {
   id: number;
   title: string;
   url: string;
@@ -26,30 +26,30 @@ interface ArticlesResults {
   featured: boolean;
   launches: ArticlesLaunches[];
   events: ArticlesEvents[];
-}
+};
 
-interface ArticlesLaunches {
+type ArticlesLaunches = {
   launch_id: string;
   provider: string;
-}
+};
 
-interface ArticlesEvents {
+type ArticlesEvents = {
   event_id: number;
   provider: string;
-}
+};
 
-interface SetArticlesData {
+type SetArticlesData = {
   setArticles: React.Dispatch<SetStateAction<ArticlesData>>;
-}
+};
 
-interface ReportsData {
+type ReportsData = {
   count: number;
   next: string;
   previous: string;
   results: ReportsResults;
-}
+};
 
-interface ReportsResults {
+type ReportsResults = {
   id: number;
   title: string;
   url: string;
@@ -58,9 +58,9 @@ interface ReportsResults {
   summary: string;
   published_at: string;
   updated_at: string;
-}
+};
 
-interface InfoData {
+type InfoData = {
   version: string;
   news_sites: string[];
-}
+};
