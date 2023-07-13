@@ -9,7 +9,7 @@ const InfoPageFooter = (): ReactElement => {
   useEffect(() => {
     getAllInfo().then((data) => setInfo(data));
   }, []);
-  
+
   return (
     <>
       <h3 className="text-xl md:text-2xl">Sources of Space News</h3>

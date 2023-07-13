@@ -5,8 +5,8 @@
   "scope": "/",
   "start_url": "/",
   "orientation": "portrait",
-  "name": "SpaceNews",
-  "short_name": "SpaceNews",
+  "name": "Space News",
+  "short_name": "Space News",
   "description": "The latest news and daily reports from NASA about space exploration and astronomy.",
   "icons": [
     {
