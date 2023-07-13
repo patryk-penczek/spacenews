@@ -2,15 +2,12 @@ import { DoubleArrowLeftIcon, DoubleArrowRightIcon } from '@/assets/icons';
 import { ReactElement } from 'react';
 import { Link } from 'react-router-dom';
 
-interface PropTypes {
-  readonly pageNumber: number;
-  readonly totalPages: number;
+interface Props {
+  pageNumber: number;
+  totalPages: number;
 }
 
-const PagePagination = ({
-  pageNumber,
-  totalPages,
-}: PropTypes): ReactElement => {
+const PagePagination = ({ pageNumber, totalPages }: Readonly<Props>): ReactElement => {
   const arrowStyle = 'md:h-7 md:w-7 w-6 h-6';
   const buttonStyle =
     'flex disabled:sr-only p-1 md:p-2 rounded-md font-semibold dark:bg-darkmode-300 dark:text-darkmode-200 md:dark:hover:text-primary text-grayscale-200 bg-white items-center md:hover:text-primary hover:duration-300';

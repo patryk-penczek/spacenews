@@ -2,10 +2,10 @@ import NavBar from 'layouts/default/NavBar';
 import { ReactElement } from 'react';
 
 type Props = {
-  readonly children: ReactElement;
+  children: ReactElement;
 };
 
-const DefaultLayout = ({ children }: Props): ReactElement => {
+const DefaultLayout = ({ children }: Readonly<Props>): ReactElement => {
   return (
     <>
       <NavBar />

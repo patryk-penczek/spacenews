@@ -3,13 +3,13 @@ import { ReactElement } from 'react';
 
 const iconStyle = 'w-6 h-6 md:sr-only';
 
-interface MobileOption {
-  readonly icon: ReactElement;
-  readonly name: string;
-  readonly link: string;
-}
+type MobileOption = {
+  icon: ReactElement;
+  name: string;
+  link: string;
+};
 
-const mobileOptions: MobileOption[] = [
+const mobileOptions: Readonly<MobileOption[]> = [
   {
     icon: <HomeIcon className={iconStyle} />,
     name: 'Home',

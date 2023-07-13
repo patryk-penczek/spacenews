@@ -2,19 +2,19 @@ import { OpenIcon } from '@/assets/icons';
 import { ReactElement, useRef } from 'react';
 
 type Props = {
-  readonly result: Result;
+  result: Readonly<Result>;
 };
 
 type Result = {
-  readonly url: string;
-  readonly image_url: string;
-  readonly title: string;
-  readonly summary: string;
-  readonly news_site: string;
-  readonly published_at: string;
+  url: string;
+  image_url: string;
+  title: string;
+  summary: string;
+  news_site: string;
+  published_at: string;
 };
 
-const Article = ({ result }: Props): ReactElement => {
+const Article = ({ result }: Readonly<Props>): ReactElement => {
   const imageRef = useRef<HTMLImageElement>(null);
   const handleImageError = () => {
     imageRef.current?.setAttribute('src', '/og-image-1200x630.webp');
