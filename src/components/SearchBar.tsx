@@ -10,7 +10,7 @@ const SearchBar = ({ setArticles }: SetArticlesData): ReactElement => {
   const navigate = useNavigate();
   const searchRef = useRef<HTMLInputElement | null>(null);
   const handleSubmit = (event: { preventDefault: () => void }) => {
-    const inputValue = String(searchRef.current?.value);
+    const inputValue = String(searchRef.current?.value ?? '');
     const title = inputValue.split(' ').join('%20');
     event.preventDefault();
     navigate('/');
@@ -19,14 +19,14 @@ const SearchBar = ({ setArticles }: SetArticlesData): ReactElement => {
         toast.error('Sorry, no results found');
         getAllArticles().then((data) => setArticles(data));
       }
-      setArticles(data);
+      setArticles(data ?? []);
     });
   };
 
   return (
     <div className="flex w-full max-w-default flex-col justify-center bg-grayscale-100 p-4 dark:bg-darkmode-400">
       <Toaster />
-      <form className="flex w-full gap-x-4 rounded-md border-1 border-darkmode-400 bg-grayscale-100 p-3 drop-shadow-md dark:bg-darkmode-300 sm:p-4">
+      <form className="flex w-full gap-x-4 rounded-md border-1 border-darkmode-400 bg-white p-3 drop-shadow-md dark:bg-darkmode-300 sm:p-4">
         <button aria-label="Search" onClick={handleSubmit}>
           <SearchIcon className="h-6 w-6 text-grayscale-400 dark:text-darkmode-200" />
         </button>
@@ -48,7 +48,9 @@ const SearchBar = ({ setArticles }: SetArticlesData): ReactElement => {
             type="reset"
             aria-label="Reset"
             onClick={() => {
-              searchRef.current!.value = '';
+              if (searchRef.current) {
+                searchRef.current.value = '';
+              }
               navigate('/');
               getAllArticles().then((data) => setArticles(data));
             }}
