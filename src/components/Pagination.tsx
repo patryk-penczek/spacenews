@@ -7,10 +7,13 @@ interface Props {
   totalPages: number;
 }
 
-const PagePagination = ({ pageNumber, totalPages }: Readonly<Props>): ReactElement => {
+const PagePagination = ({
+  pageNumber,
+  totalPages,
+}: Readonly<Props>): ReactElement => {
   const arrowStyle = 'md:h-7 md:w-7 w-6 h-6';
   const buttonStyle =
-    'flex disabled:sr-only p-1 md:p-2 rounded-md font-semibold dark:bg-darkmode-300 dark:text-darkmode-200 md:dark:hover:text-primary text-grayscale-200 bg-white items-center md:hover:text-primary hover:duration-300';
+    'flex disabled:sr-only p-1 md:p-2 rounded-md dark:bg-darkmode-300 dark:text-darkmode-200 md:dark:hover:text-primary text-grayscale-200 bg-white items-center md:hover:text-primary hover:duration-300';
   const pageNumberWidth = 'w-8 text-center';
 
   const generateLinkButton = (page: number, content: ReactElement) => {
