@@ -9,7 +9,7 @@ const NavBar = (): ReactElement => {
     <nav className="flex items-center justify-center bg-grayscale-100 dark:bg-darkmode-400">
       <div className="flex w-full max-w-default items-center justify-between gap-x-8 p-4 font-medium text-black dark:text-white">
         <Link to="/" className="flex items-center gap-x-2">
-          <strong className="rounded-lg bg-primary p-2 font-semibold text-white">
+          <strong className="rounded-lg bg-primary p-2 font-medium text-white">
             Space
           </strong>
           News
