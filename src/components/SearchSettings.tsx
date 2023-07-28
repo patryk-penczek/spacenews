@@ -6,7 +6,11 @@ import {
   useState,
 } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { getAllInfo, getSearchedNewsSites } from '../../api/api';
+import {
+  getAllArticles,
+  getAllInfo,
+  getSearchedNewsSites,
+} from '../../api/api';
 import Select from 'react-select';
 import { darkInput } from '@/styles/darkInput';
 import { lightInput } from '@/styles/lightInput';
@@ -54,12 +58,15 @@ const SearchSettings = ({ isOpen, setArticles }: Props): ReactElement => {
                   label: 'Loading',
                 }))
           }
-          onChange={(selectedOption) =>
-            searchByNewsSite(selectedOption && selectedOption.value)
-          }
+          onChange={(selectedOption, triggeredAction) => {
+            searchByNewsSite(selectedOption && selectedOption.value);
+            if (triggeredAction.action === 'clear') {
+              getAllArticles().then((data) => setArticles(data));
+            }
+          }}
           isClearable
           placeholder="Choose a news site"
-          className="min-w-[300px]"
+          className="sm:min-w-70"
           styles={theme === 'dark' ? darkInput : lightInput}
         />
       </div>

@@ -47,6 +47,9 @@ module.exports = {
       minHeight: {
         large: 'calc(100vh - 72px)',
       },
+      minWidth: {
+        70: '280px',
+      },
       maxWidth: {
         default: '1440px',
         article: '720px',
