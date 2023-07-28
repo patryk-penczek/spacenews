@@ -23,9 +23,9 @@ module.exports = {
   },
   plugins: ['react', '@typescript-eslint'],
   rules: {
+    'linebreak-style': ['error', 'unix'],
     'react/react-in-jsx-scope': 'off',
     'comma-dangle': ['error', 'always-multiline'],
-    'linebreak-style': ['error', 'windows'],
     'object-curly-spacing': [
       'error',
       'always',
