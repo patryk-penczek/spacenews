@@ -1,5 +1,5 @@
 import AuthorPhoto from '@/assets/author-photo.webp';
-import { GithubIcon, LinkedInIcon, TwitterIcon } from '@/assets/icons';
+import { GithubIcon, LinkedInIcon, XIcon } from '@/assets/icons';
 import { ReactElement } from 'react';
 
 const InfoPageAuthor = (): ReactElement => {
@@ -32,12 +32,12 @@ const InfoPageAuthor = (): ReactElement => {
               <GithubIcon className={iconStyle} />
             </a>
             <a
-              href="https://twitter.com/patryk_penczek"
+              href="https://x.com/patryk_penczek"
               target="_blank"
               rel="noreferrer"
               className="hover:text-primary hover:duration-300"
             >
-              <TwitterIcon className={iconStyle} />
+              <XIcon className={iconStyle} />
             </a>
             <a
               href="https://www.linkedin.com/in/patryk-penczek"
